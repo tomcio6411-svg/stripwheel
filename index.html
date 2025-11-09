@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Koło Fortuny - Gra z modelem 3D</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #eee; display:flex; height:100vh; }
+    #left { width: 65%; position: relative; }
+    canvas { display: block; width:100%; height:100% }
+    #ui { width: 35%; padding: 18px; box-sizing: border-box; background: #0f0f12; overflow:auto; }
+    button, select { font-size:16px; padding:10px; margin:6px 0; width:100%; }
+    #wheelCanvas { width:100%; height:320px; background:#222; display:block; border-radius:8px; }
+    .log { background:#0b0b0d; padding:8px; margin-top:8px; min-height:100px; white-space:pre-wrap; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div id="left">
+    <canvas id="three-canvas"></canvas>
+  </div>
+  <div id="ui">
+    <h2>Strip Wheel — prototyp</h2>
+    <label>Wybierz postać:</label>
+    <select id="genderSelect">
+      <option value="female">Kobieta</option>
+      <option value="male">Mężczyzna</option>
+    </select>
+    <button id="loadBtn">Wczytaj model</button>
+
+    <canvas id="wheelCanvas" width="600" height="320"></canvas>
+    <button id="spinBtn">Kręć kołem!</button>
+    <div style="margin-top:8px;">
+      <label>Tryb (maksymalnie zdejmować do):</label>
+      <select id="limitSelect">
+        <option value="underwear">Bielizna (bez nagości)</option>
+        <option value="all">Pełny (bezpieczny)</option>
+      </select>
+    </div>
+
+    <div class="log" id="logArea">Gotowy. Wczytaj model.</div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
